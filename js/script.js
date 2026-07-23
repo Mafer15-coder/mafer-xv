@@ -34,7 +34,7 @@ btn.addEventListener('click',async()=>{
 });
 
 const lanternLayer=document.getElementById('lanternLayer');
-if(lanternLayer){
+if(lanternLayer && lanternLayer.children.length===0){
   const lanternData=[
     [4,16,2,10,-18],[10,12,5,13,24],[17,18,9,9,-14],[23,13,1,15,28],
     [30,20,12,8,-12],[37,14,6,12,18],[44,17,3,16,-24],[51,11,8,10,20],
@@ -57,7 +57,7 @@ if(lanternLayer){
 
 
 const globalLanternLayer=document.getElementById('globalLanternLayer');
-if(globalLanternLayer){
+if(globalLanternLayer && globalLanternLayer.children.length===0){
   const globalLanterns=[
     [6,23,4,8,-18],[14,27,13,10,20],[23,31,18,7,-14],[33,25,9,9,18],
     [43,29,21,8,-20],[54,24,15,10,16],[65,30,6,7,-15],[76,26,19,9,20],

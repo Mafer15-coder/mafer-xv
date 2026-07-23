@@ -351,3 +351,83 @@ h2{
 }
 
 .story-card picture{display:block;width:100%}.story-card picture img{width:100%;height:100%;object-fit:cover}
+
+
+/* FIX DEFINITIVO FAROLES SAFARI / IPHONE */
+.lantern-layer,
+.global-lantern-layer{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  pointer-events:none !important;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
+}
+.lantern-layer{z-index:3 !important;}
+.global-lantern-layer{z-index:40 !important;}
+.lantern,.global-lantern{
+  display:block !important;
+  visibility:visible !important;
+  will-change:transform,opacity;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  -webkit-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+}
+.lantern{
+  -webkit-animation-name:riseLantern !important;
+  animation-name:riseLantern !important;
+  -webkit-animation-timing-function:linear !important;
+  animation-timing-function:linear !important;
+  -webkit-animation-iteration-count:infinite !important;
+  animation-iteration-count:infinite !important;
+}
+.global-lantern{
+  -webkit-animation-name:globalLanternRise !important;
+  animation-name:globalLanternRise !important;
+  -webkit-animation-timing-function:linear !important;
+  animation-timing-function:linear !important;
+  -webkit-animation-iteration-count:infinite !important;
+  animation-iteration-count:infinite !important;
+}
+@-webkit-keyframes riseLantern{
+  0%{-webkit-transform:translate3d(0,0,0) scale(.72);opacity:0}
+  10%{opacity:.9}
+  78%{opacity:.84}
+  100%{-webkit-transform:translate3d(var(--drift),-118vh,0) scale(1.08);opacity:0}
+}
+@-webkit-keyframes globalLanternRise{
+  0%{-webkit-transform:translate3d(0,0,0) scale(.75);opacity:0}
+  12%{opacity:.48}
+  78%{opacity:.42}
+  100%{-webkit-transform:translate3d(var(--drift),-112vh,0) scale(1.05);opacity:0}
+}
+/* Hero: valores fijos, sin depender de JavaScript */
+.l1{left:4%;width:10px;height:15px;--drift:-18px;animation-duration:16s!important;animation-delay:-2s!important}
+.l2{left:12%;width:14px;height:21px;--drift:24px;animation-duration:12s!important;animation-delay:-5s!important}
+.l3{left:21%;width:9px;height:14px;--drift:-14px;animation-duration:18s!important;animation-delay:-9s!important}
+.l4{left:30%;width:16px;height:24px;--drift:28px;animation-duration:13s!important;animation-delay:-1s!important}
+.l5{left:39%;width:11px;height:17px;--drift:-12px;animation-duration:20s!important;animation-delay:-12s!important}
+.l6{left:47%;width:13px;height:20px;--drift:18px;animation-duration:14s!important;animation-delay:-6s!important}
+.l7{left:55%;width:17px;height:25px;--drift:-24px;animation-duration:17s!important;animation-delay:-3s!important}
+.l8{left:64%;width:11px;height:17px;--drift:20px;animation-duration:11s!important;animation-delay:-8s!important}
+.l9{left:72%;width:10px;height:15px;--drift:-18px;animation-duration:19s!important;animation-delay:-11s!important}
+.l10{left:80%;width:15px;height:22px;--drift:24px;animation-duration:13s!important;animation-delay:-4s!important}
+.l11{left:88%;width:12px;height:18px;--drift:-16px;animation-duration:16s!important;animation-delay:-7s!important}
+.l12{left:95%;width:15px;height:23px;--drift:20px;animation-duration:12s!important;animation-delay:-2s!important}
+.gl1{left:6%;width:8px;height:12px;--drift:-18px;animation-duration:23s!important;animation-delay:-4s!important}
+.gl2{left:15%;width:10px;height:15px;--drift:20px;animation-duration:27s!important;animation-delay:-13s!important}
+.gl3{left:25%;width:7px;height:11px;--drift:-14px;animation-duration:31s!important;animation-delay:-18s!important}
+.gl4{left:35%;width:9px;height:14px;--drift:18px;animation-duration:25s!important;animation-delay:-9s!important}
+.gl5{left:45%;width:8px;height:12px;--drift:-20px;animation-duration:29s!important;animation-delay:-21s!important}
+.gl6{left:56%;width:10px;height:15px;--drift:16px;animation-duration:24s!important;animation-delay:-15s!important}
+.gl7{left:67%;width:7px;height:11px;--drift:-15px;animation-duration:30s!important;animation-delay:-6s!important}
+.gl8{left:77%;width:9px;height:14px;--drift:20px;animation-duration:26s!important;animation-delay:-19s!important}
+.gl9{left:88%;width:8px;height:12px;--drift:-18px;animation-duration:32s!important;animation-delay:-11s!important}
+.gl10{left:96%;width:7px;height:11px;--drift:14px;animation-duration:28s!important;animation-delay:-23s!important}
+@media(max-width:760px){
+  .lantern-layer{position:absolute!important;inset:0!important;overflow:hidden!important}
+  .global-lantern-layer{position:fixed!important;inset:0!important;overflow:hidden!important}
+  .lantern{filter:saturate(1.18) brightness(1.08)}
+  .global-lantern{opacity:0}
+}
