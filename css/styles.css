@@ -101,7 +101,10 @@ opacity:0;animation:riseLantern linear infinite;filter:saturate(1.08)}
   78%{opacity:.82}
   100%{transform:translate3d(var(--drift),-118vh,0) scale(1.08);opacity:0}
 }
-@media (prefers-reduced-motion:reduce){.lantern{animation:none;display:none}}
+@media (prefers-reduced-motion:reduce){
+  /* Conserva los faroles en iPhone aunque esté activa “Reducir movimiento”. */
+  .lantern{display:block;animation-name:riseLantern!important;animation-timing-function:linear!important;animation-iteration-count:infinite!important}
+}
 
 
 @media(max-width:900px) and (min-width:761px){
@@ -259,7 +262,8 @@ h2{
   .story-card:hover,.event-card:hover,.card:hover{transform:none}
 }
 @media(prefers-reduced-motion:reduce){
-  .global-lantern{display:none}
+  /* Mantiene el efecto principal de faroles, con movimiento suave. */
+  .global-lantern{display:block;animation-name:globalLanternRise!important;animation-timing-function:linear!important;animation-iteration-count:infinite!important}
   .btn,.secondary,.story-card,.event-card,.card{transition:none}
 }
 
@@ -345,3 +349,5 @@ h2{
 @media(max-width:760px){
   .gift-grid{grid-template-columns:1fr;max-width:420px}
 }
+
+.story-card picture{display:block;width:100%}.story-card picture img{width:100%;height:100%;object-fit:cover}
