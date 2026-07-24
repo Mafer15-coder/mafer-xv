@@ -1,15 +1,14 @@
-# Invitación XV María Fernanda — Edición Encantada
+# Invitación XV María Fernanda — Edición Premium Final
 
 Versión lista para publicar en GitHub Pages.
 
-Incluye:
-- Portada limpia con monograma MF.
-- Nombre “María Fernanda” escrito letra por letra.
-- Faroles durante todo el recorrido, compatibles con Safari/iPhone.
-- Línea del tiempo con fotos de bebé, graduación y etapa actual.
-- Pascal interactivo: parpadea, mueve la cabeza y genera destellos al tocarlo.
-- Música, contador, mapas, mesa de regalos, dedicatoria y confirmación por WhatsApp.
-- Horarios: misa 6:00 p.m. y recepción 8:00 p.m.
-- Fecha: 12 de septiembre de 2026.
+- Portada sin fotografías.
+- Monograma MF centrado.
+- Nombre en caligrafía dorada con revelado suave de tinta, sin cursor ni efecto de máquina de escribir.
+- Faroles durante toda la invitación después de abrirla.
+- Solo las tres fotografías originales dentro de “Mis recuerdos”.
+- Sin Pascal ni elementos infantiles.
+- Firma “Con cariño” y “María Fernanda” en líneas separadas.
+- Misa 6:00 p.m. y recepción 8:00 p.m., el 12 de septiembre de 2026.
 
-Para publicar, sube todo el contenido de esta carpeta a la raíz del repositorio `mafer-xv` y reemplaza los archivos existentes.
+Sube todo el contenido de esta carpeta a la raíz del repositorio `mafer-xv` y reemplaza los archivos existentes.
