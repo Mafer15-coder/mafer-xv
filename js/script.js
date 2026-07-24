@@ -16,6 +16,28 @@ const audio=document.getElementById('localAudio');
 const yt=document.getElementById('ytPlayer');
 const status=document.getElementById('audioStatus');
 let playing=false;
+
+const welcomeScreen=document.getElementById('welcomeScreen');
+const enterInvitation=document.getElementById('enterInvitation');
+async function startMusic(){
+  try{
+    await audio.play();
+    playing=true;
+    btn.textContent='❚❚ Pausar música';
+    return true;
+  }catch(err){
+    return false;
+  }
+}
+if(enterInvitation){
+  enterInvitation.addEventListener('click',async()=>{
+    await startMusic();
+    welcomeScreen.classList.add('is-leaving');
+    document.body.classList.remove('welcome-open');
+    setTimeout(()=>welcomeScreen.remove(),1200);
+  });
+}
+
 function showStatus(t){status.textContent=t;status.style.display='block';setTimeout(()=>status.style.display='none',3500)}
 
 btn.addEventListener('click',async()=>{
@@ -24,8 +46,8 @@ btn.addEventListener('click',async()=>{
    btn.textContent='♫ Reproducir música'; return;
  }
  try{
-   await audio.play();
-   playing=true; btn.textContent='❚❚ Pausar música';
+   const ok=await startMusic();
+   if(!ok) throw new Error('audio blocked');
  }catch(err){
    yt.src='https://www.youtube.com/embed/fZSZMp32XaA?autoplay=1&loop=1&playlist=fZSZMp32XaA&controls=0&rel=0';
    playing=true; btn.textContent='❚❚ Pausar música';
